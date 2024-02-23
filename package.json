@@ -39,5 +39,9 @@
   },
   "msw": {
     "workerDirectory": "src"
+  },
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.4.0"
   }
 }
