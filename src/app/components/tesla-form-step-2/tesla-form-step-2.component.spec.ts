@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SummaryStepComponent } from './summary-step.component';
+import { TeslaFormStep2Component } from './tesla-form-step-2.component';
 
-describe('SummaryStepComponent', () => {
-  let component: SummaryStepComponent;
-  let fixture: ComponentFixture<SummaryStepComponent>;
+describe('ConfigStepComponent', () => {
+  let component: TeslaFormStep2Component;
+  let fixture: ComponentFixture<TeslaFormStep2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SummaryStepComponent],
+      imports: [TeslaFormStep2Component],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SummaryStepComponent);
+    fixture = TestBed.createComponent(TeslaFormStep2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

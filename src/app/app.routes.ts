@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { ConfigStepComponent } from './components/tesla-form/config-step/config-step.component';
-import { ModelStepComponent } from './components/tesla-form/model-step/model-step.component';
-import { SummaryStepComponent } from './components/tesla-form/summary-step/summary-step.component';
+import { TeslaFormStep1Component } from './components/tesla-form-step-1/tesla-form-step-1.component';
+import { TeslaFormStep2Component } from './components/tesla-form-step-2/tesla-form-step-2.component';
+import { TeslaFormStep3Component } from './components/tesla-form-step-3/tesla-form-step-3.component';
 import { TeslaFormComponent } from './components/tesla-form/tesla-form.component';
 import { configStepGuard } from './guards/config-step.guard';
-import { TeslaFormService } from './services/tesla-form.service';
 import { summaryStepGuard } from './guards/summary-step.guard';
+import { TeslaFormService } from './services/tesla-form.service';
 
 export const routes: Routes = [
   {
@@ -14,17 +14,17 @@ export const routes: Routes = [
     providers: [TeslaFormService],
     children: [
       {
-        path: '',
-        component: ModelStepComponent,
+        path: 'step-1',
+        component: TeslaFormStep1Component,
       },
       {
-        path: 'config',
-        component: ConfigStepComponent,
+        path: 'step-2',
+        component: TeslaFormStep2Component,
         canActivate: [configStepGuard],
       },
       {
-        path: 'summary',
-        component: SummaryStepComponent,
+        path: 'step-3',
+        component: TeslaFormStep3Component,
         canActivate: [summaryStepGuard],
       },
     ],

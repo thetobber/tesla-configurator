@@ -7,9 +7,5 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
-  "tailwindAttributes": [
-    "class",
-    "ngClass",
-    "[class]"
-  ]
+  "tailwindAttributes": ["class", "ngClass", "[ngClass]", "[class]", "routerLinkActive"]
 }
