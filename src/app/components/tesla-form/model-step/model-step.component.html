@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+  <div>
+    <label for="modelSelect">Select model</label>
+    <select id="modelSelect" formControlName="model">
+      @for (model of models(); track model.code) {
+        <option [ngValue]="model">{{ model.description }}</option>
+      }
+    </select>
+  </div>
+  <div>
+    <label for="colorSelect">Select color</label>
+    <select id="colorSelect" formControlName="color">
+      @for (color of colors(); track color.code) {
+        <option [ngValue]="color">{{ color.description }}</option>
+      }
+    </select>
+  </div>
+</form>

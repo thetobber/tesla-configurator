@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+  @if (options(); as options) {
+    <div>
+      <label for="configSelect">Select config</label>
+      <select id="configSelect" formControlName="config">
+        @for (config of options.configs; track config.id) {
+          <option [ngValue]="config">{{ config.description }}</option>
+        }
+      </select>
+    </div>
+
+    @if (options.towHitch) {
+      <div>
+        <label for="includeTow">Tow hitch?</label>
+        <input id="includeTow" type="checkbox" formControlName="towHitch" />
+      </div>
+    }
+
+    @if (options.yoke) {
+      <div>
+        <label for="includeYoke">Yoke steering reel?</label>
+        <input id="includeYoke" type="checkbox" formControlName="yoke" />
+      </div>
+    }
+  }
+</form>
