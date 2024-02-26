@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TeslaFormService } from '../../services/tesla-form.service';
 
 @Component({
   selector: 'tesla-form-step-3',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './tesla-form-step-3.component.html',
   host: { class: 'block' },
 })
-export class TeslaFormStep3Component {}
+export class TeslaFormStep3Component {
+  form = this.teslaFormService.configForm;
+  options = this.teslaFormService.options;
+
+  constructor(private teslaFormService: TeslaFormService) {}
+}

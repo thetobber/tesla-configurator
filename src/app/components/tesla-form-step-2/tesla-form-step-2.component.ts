@@ -7,6 +7,7 @@ import { TeslaFormService } from '../../services/tesla-form.service';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './tesla-form-step-2.component.html',
+  host: { class: 'block' },
 })
 export class TeslaFormStep2Component {
   form = this.teslaFormService.configForm;
