@@ -1,6 +1,6 @@
-<h2 class="py-6 text-lg font-semibold leading-none">Step 1: Choose your model and molor</h2>
-<form [formGroup]="form" class="flex gap-4">
-  <div class="w-full">
+<h2 class="py-6 text-lg font-semibold leading-none">Step 1: Choose your model and color</h2>
+<form [formGroup]="form" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <div>
     <label for="modelSelect" class="block pb-2 font-semibold">Choose model</label>
     <select
       id="modelSelect"
@@ -12,7 +12,7 @@
       }
     </select>
   </div>
-  <div class="w-full">
+  <div>
     <label for="colorSelect" class="block pb-2 font-semibold">Choose color</label>
     <select
       id="colorSelect"

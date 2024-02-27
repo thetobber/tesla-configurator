@@ -1,5 +1,5 @@
 <h2 class="py-6 text-lg font-semibold leading-none">Step 2: Select your config and options</h2>
-<form [formGroup]="form" class="flex gap-4">
+<form [formGroup]="configForm" class="flex gap-4">
   <div class="w-full">
     <label for="configSelect" class="block pb-2 font-semibold">Select config</label>
     <select
@@ -33,3 +33,9 @@
     </div>
   }
 </form>
+
+@if (configFormValues()?.config; as config) {
+  <div>Range {{ config!.range }}</div>
+  <div>Speed {{ config!.speed }}</div>
+  <div>Price {{ config!.price | currency }}</div>
+}

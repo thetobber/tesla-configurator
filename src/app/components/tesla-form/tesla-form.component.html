@@ -1,24 +1,30 @@
 <main class="mx-auto block max-w-screen-lg p-4">
   <div class="block rounded-lg border border-gray-300 bg-white p-4">
-    <nav class="flex rounded-md border border-gray-300 p-1">
+    <nav class="grid grid-cols-1 rounded-md border border-gray-300 p-1 sm:grid-cols-3">
       <a
-        routerLink="/step-1"
+        id="step1"
+        routerLink="/"
         routerLinkActive="cursor-default touch-none bg-gray-300"
+        [routerLinkActiveOptions]="linkActiveOptions"
         class="block w-full rounded px-3 py-1.5 text-center text-sm font-semibold"
       >
         Step 1
       </a>
       <a
+        id="step2"
         routerLink="/step-2"
         routerLinkActive="cursor-default touch-none bg-gray-300"
+        [routerLinkActiveOptions]="linkActiveOptions"
         class="block w-full rounded px-3 py-1.5 text-center text-sm font-semibold"
         [ngClass]="modelFormValid() ? '' : 'cursor-not-allowed touch-none opacity-30'"
       >
         Step 2
       </a>
       <a
+        id="step3"
         routerLink="/step-3"
         routerLinkActive="cursor-default touch-none bg-gray-300"
+        [routerLinkActiveOptions]="linkActiveOptions"
         class="block w-full rounded px-3 py-1.5 text-center text-sm font-semibold"
         [ngClass]="modelFormValid() && configFormValid() ? '' : 'cursor-not-allowed touch-none opacity-30'"
       >
@@ -28,7 +34,7 @@
     <div class="pb-4">
       <router-outlet></router-outlet>
     </div>
-    <div class="aspect-w-16 aspect-h-9 rounded-md border border-gray-300 bg-white">
+    <div class="aspect-h-3 aspect-w-4 sm:aspect-h-9 sm:aspect-w-16">
       @if (imgUrl(); as imgSrc) {
         <img [src]="imgSrc" class="h-full w-full object-contain object-center" />
       } @else {

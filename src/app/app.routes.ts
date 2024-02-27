@@ -14,7 +14,7 @@ export const routes: Routes = [
     providers: [TeslaFormService],
     children: [
       {
-        path: 'step-1',
+        path: '',
         component: TeslaFormStep1Component,
       },
       {

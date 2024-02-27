@@ -1,4 +1,3 @@
-import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TeslaFormService } from '../../services/tesla-form.service';
@@ -6,7 +5,7 @@ import { TeslaFormService } from '../../services/tesla-form.service';
 @Component({
   selector: 'tesla-form-step-1',
   standalone: true,
-  imports: [AsyncPipe, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './tesla-form-step-1.component.html',
   host: { class: 'block' },
 })

@@ -9,8 +9,8 @@ import { TeslaFormService } from '../../services/tesla-form.service';
   host: { class: 'block' },
 })
 export class TeslaFormStep3Component {
-  form = this.teslaFormService.configForm;
-  options = this.teslaFormService.options;
+  // form = this.teslaFormService.configForm;
+  // options = this.teslaFormService.options;
 
   constructor(private teslaFormService: TeslaFormService) {}
 }

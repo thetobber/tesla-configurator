@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *,
+  *::before,
+  *::after {
+    min-width: 0;
+  }
+}
+
 router-outlet {
   display: none;
 }

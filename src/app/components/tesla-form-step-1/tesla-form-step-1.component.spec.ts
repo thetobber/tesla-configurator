@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TeslaFormStep1Component } from './tesla-form-step-1.component';
 
-describe('ModelStepComponent', () => {
+describe('TeslaFormStep1Component', () => {
   let component: TeslaFormStep1Component;
   let fixture: ComponentFixture<TeslaFormStep1Component>;
 

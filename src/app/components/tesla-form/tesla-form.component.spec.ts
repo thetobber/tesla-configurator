@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TeslaFormComponent } from './tesla-form.component';
 
 describe('TeslaFormComponent', () => {
@@ -8,10 +7,9 @@ describe('TeslaFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TeslaFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [TeslaFormComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TeslaFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

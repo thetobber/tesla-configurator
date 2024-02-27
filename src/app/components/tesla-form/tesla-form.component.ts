@@ -15,5 +15,7 @@ export class TeslaFormComponent {
   configFormValid = this.teslaFormService.configFormValid;
   imgUrl = this.teslaFormService.imgUrl;
 
+  linkActiveOptions = { exact: true };
+
   constructor(private teslaFormService: TeslaFormService) {}
 }
