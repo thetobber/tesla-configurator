@@ -1,1 +1,33 @@
-<h2>Step 3: Summary</h2>
+<h2 class="py-6 text-lg font-semibold leading-none">Step 3: Summary</h2>
+
+<h3 class="pb-3 text-base font-semibold">Your Tesla {{ modelFormValues().model.description }}</h3>
+
+<table class="w-full table-fixed">
+  <tr>
+    <th class="text-left font-semibold" scope="row">{{ configFormValues().config.description }}</th>
+    <td>{{ configFormValues().config.price | currency }}</td>
+  </tr>
+  <tr>
+    <td colspan="2">Range: {{ configFormValues().config.range }} - Max speed: {{ configFormValues().config.speed }}</td>
+  </tr>
+  <tr>
+    <th class="text-left font-semibold" scope="row">{{ modelFormValues().color.description }}</th>
+    <td>{{ modelFormValues().color.price | currency }}</td>
+  </tr>
+  @if (configFormValues().towHitch) {
+    <tr>
+      <th class="text-left font-semibold" scope="row">Tow hitch package</th>
+      <td>{{ 1000 | currency }}</td>
+    </tr>
+  }
+  @if (configFormValues().yoke) {
+    <tr>
+      <th class="text-left font-semibold" scope="row">Yoke steering reel package</th>
+      <td>{{ 1000 | currency }}</td>
+    </tr>
+  }
+  <tr>
+    <th class="text-left font-semibold" scope="row">Total cost</th>
+    <td>{{ totalPrice() | currency }}</td>
+  </tr>
+</table>

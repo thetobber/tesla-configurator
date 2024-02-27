@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, computed } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { defaultIfEmpty, filter, map, startWith, switchMap, tap } from 'rxjs';
+import { map, startWith, switchMap, tap } from 'rxjs';
 import { TeslaColor } from '../types/tesla-color.type';
 import { TeslaConfig } from '../types/tesla-config.type';
 import { TeslaModel } from '../types/tesla-model.type';
@@ -62,6 +62,14 @@ export class TeslaFormService {
       yoke: false,
     },
   });
+
+  totalPrice = computed(
+    () =>
+      (this.modelFormValues()?.color?.price ?? 0) +
+      (this.configFormValues()?.config?.price ?? 0) +
+      (this.configFormValues()?.towHitch ? 1000 : 0) +
+      (this.configFormValues()?.yoke ? 1000 : 0),
+  );
 
   constructor(private http: HttpClient) {}
 }
