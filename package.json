@@ -5,8 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "ng build --watch --configuration development"
   },
   "private": true,
   "dependencies": {
@@ -26,15 +25,8 @@
     "@angular-devkit/build-angular": "17.2.1",
     "@angular/cli": "17.2.1",
     "@angular/compiler-cli": "17.2.2",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@types/jasmine": "5.1.0",
+    "@tailwindcss/aspect-ratio": "0.4.2",
     "autoprefixer": "^10.4.17",
-    "jasmine-core": "5.1.0",
-    "karma": "6.4.3",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-coverage": "2.2.1",
-    "karma-jasmine": "5.1.0",
-    "karma-jasmine-html-reporter": "2.1.0",
     "msw": "2.0.14",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",

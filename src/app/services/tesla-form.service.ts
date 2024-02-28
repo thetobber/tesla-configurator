@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, computed } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { map, startWith, switchMap, tap } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
 import { TeslaColor } from '../types/tesla-color.type';
 import { TeslaConfig } from '../types/tesla-config.type';
 import { TeslaModel } from '../types/tesla-model.type';
@@ -31,7 +31,7 @@ export class TeslaFormService {
   private configFormValid$ = this.configForm.statusChanges.pipe(map(status => status === 'VALID'));
   configFormValid = toSignal(this.configFormValid$, { initialValue: false });
 
-  private models$ = this.http.get<TeslaModel[]>('/models').pipe(startWith<TeslaModel[]>([]));
+  private models$ = this.http.get<TeslaModel[]>('/models');
   models = toSignal(this.models$, { initialValue: [] });
 
   private colors$ = this.modelForm.controls.model.valueChanges.pipe(

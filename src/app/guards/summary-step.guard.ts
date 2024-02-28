@@ -6,11 +6,11 @@ export const summaryStepGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const teslaFormService = inject(TeslaFormService);
 
-  if (!teslaFormService.modelForm.valid) {
+  if (!teslaFormService.modelFormValid()) {
     return router.parseUrl('/');
   }
 
-  if (!teslaFormService.configForm.valid) {
+  if (!teslaFormService.configFormValid()) {
     return router.parseUrl('/step-2');
   }
 

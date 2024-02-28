@@ -1,7 +1,5 @@
-<h2 class="py-6 text-lg font-semibold leading-none">Step 3: Summary</h2>
-
+<h2 class="py-8 text-2xl font-semibold leading-none">Step 3: Summary</h2>
 <h3 class="pb-3 text-base font-semibold">Your Tesla {{ modelFormValues().model.description }}</h3>
-
 <table class="w-full table-fixed">
   <tr>
     <th class="text-left font-semibold" scope="row">{{ configFormValues().config.description }}</th>
@@ -26,7 +24,7 @@
       <td>{{ 1000 | currency }}</td>
     </tr>
   }
-  <tr>
+  <tr class="border-y border-gray-300">
     <th class="text-left font-semibold" scope="row">Total cost</th>
     <td>{{ totalPrice() | currency }}</td>
   </tr>
