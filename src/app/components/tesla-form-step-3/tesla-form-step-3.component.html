@@ -1,31 +1,44 @@
 <h2 class="py-8 text-2xl font-semibold leading-none">Step 3: Summary</h2>
 <h3 class="pb-3 text-base font-semibold">Your Tesla {{ modelFormValues().model.description }}</h3>
-<table class="w-full table-fixed">
-  <tr>
-    <th class="text-left font-semibold" scope="row">{{ configFormValues().config.description }}</th>
-    <td>{{ configFormValues().config.price | currency }}</td>
-  </tr>
-  <tr>
-    <td colspan="2">Range: {{ configFormValues().config.range }} - Max speed: {{ configFormValues().config.speed }}</td>
-  </tr>
-  <tr>
-    <th class="text-left font-semibold" scope="row">{{ modelFormValues().color.description }}</th>
-    <td>{{ modelFormValues().color.price | currency }}</td>
-  </tr>
-  @if (configFormValues().towHitch) {
+<div class="overflow-x-auto">
+  <table class="w-full min-w-[334px] table-fixed whitespace-nowrap">
     <tr>
-      <th class="text-left font-semibold" scope="row">Tow hitch package</th>
-      <td>{{ 1000 | currency }}</td>
+      <th class="text-left font-semibold" scope="row">{{ configFormValues().config.description }}</th>
+      <td class="text-right">{{ configFormValues().config.price | currency }}</td>
     </tr>
-  }
-  @if (configFormValues().yoke) {
     <tr>
-      <th class="text-left font-semibold" scope="row">Yoke steering reel package</th>
-      <td>{{ 1000 | currency }}</td>
+      <td colspan="2">
+        <div class="flex gap-4 text-gray-500">
+          <div class="flex gap-x-1">
+            <div class="font-semibold">Range</div>
+            <div>{{ configFormValues().config.range }} miles</div>
+          </div>
+          <div class="flex gap-x-1">
+            <div class="font-semibold">Max speed</div>
+            <div>{{ configFormValues().config.speed }}</div>
+          </div>
+        </div>
+      </td>
     </tr>
-  }
-  <tr class="border-y border-gray-300">
-    <th class="text-left font-semibold" scope="row">Total cost</th>
-    <td>{{ totalPrice() | currency }}</td>
-  </tr>
-</table>
+    <tr>
+      <th class="text-left font-semibold" scope="row">{{ modelFormValues().color.description }}</th>
+      <td class="text-right">{{ modelFormValues().color.price | currency }}</td>
+    </tr>
+    @if (configFormValues().towHitch) {
+      <tr>
+        <th class="text-left font-semibold" scope="row">Tow hitch package</th>
+        <td class="text-right">{{ 1000 | currency }}</td>
+      </tr>
+    }
+    @if (configFormValues().yoke) {
+      <tr>
+        <th class="text-left font-semibold" scope="row">Yoke steering reel package</th>
+        <td class="text-right">{{ 1000 | currency }}</td>
+      </tr>
+    }
+    <tr class="border-y border-gray-300">
+      <th class="text-left font-semibold" scope="row">Total cost</th>
+      <td class="text-right">{{ totalPrice() | currency }}</td>
+    </tr>
+  </table>
+</div>
